@@ -52,12 +52,10 @@ module.exports = {
 
   // add your custom rules here
   rules: {
-    
     'no-param-reassign': 'off',
     'no-void': 'off',
     'no-nested-ternary': 'off',
     'max-classes-per-file': 'off',
-
 
     'import/first': 'off',
     'import/named': 'error',
@@ -68,7 +66,6 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
-
     
     'vue/multi-word-component-names': 'off',
     'quotes':["error", "double"],
