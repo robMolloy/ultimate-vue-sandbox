@@ -5,10 +5,10 @@ const routes = [
     children: [
       { path: "", component: () => import("pages/IndexPage.vue") },
       { path: "todos", component: () => import("src/pages/PageTodos.vue") },
-      { path: "om", component: () => import("src/pages/PageOnMounted.vue") },
       { path: "counter", component: () => import("src/pages/PageCounter.vue") },
       { path: "2wb", component: () => import("src/pages/PageTwoWayBinding.vue") },
       { path: "quasar-store", component: () => import("src/pages/PageDefaultQuasarStores.vue") },
+      { path: "use-refs", component: () => import("pages/PageUseRefs.vue") },
       { path: "wrapper", component: () => import("src/pages/PageWrapper.vue") },
     ],
   },
