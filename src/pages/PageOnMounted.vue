@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-import onMountedParent from "src/components/onMounted/onMountedParent.vue";
+import onMountedParent from "src/components/onMounted/onMounted.vue";
 </script>
