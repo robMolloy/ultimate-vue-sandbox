@@ -1,7 +1,5 @@
 <template>
-  <q-page padding>
-    <UseRefs />
-  </q-page>
+  <UseRefs />
 </template>
 
 <script setup>

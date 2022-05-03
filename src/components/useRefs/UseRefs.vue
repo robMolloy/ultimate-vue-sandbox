@@ -6,16 +6,22 @@
     <input @click="loginput" ref="input" />
   </div>
   <div>
-    <q-btn @click="logthisqbtn" ref="qbtn">logthisqbtn</q-btn>
-    <q-btn @click="logtitle">logtitle</q-btn>
-    <q-btn @click="logdiv">logdiv</q-btn>
-    <q-btn @click="logspan">logspan</q-btn>
-    <q-btn @click="loginput">loginput</q-btn>
+    <q-btn class="full-width" @click="logthisqbtn" ref="qbtn">logthisqbtn</q-btn>
+    <q-btn class="full-width" @click="logtitle">logtitle</q-btn>
+    <q-btn class="full-width" @click="logdiv">logdiv</q-btn>
+    <q-btn class="full-width" @click="logspan">logspan</q-btn>
+    <q-btn class="full-width" @click="loginput">loginput</q-btn>
+    <br />
+    <br />
+    <br />
+    <q-btn class="full-width" @click="() => log(qbtn)">logthatqbtnagain</q-btn>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+
+const { log } = console;
 
 const title = ref();
 const div = ref();
