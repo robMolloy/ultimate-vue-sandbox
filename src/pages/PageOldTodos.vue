@@ -1,11 +1,11 @@
 <template>
   <q-page padding>
-    <h1>todo page</h1>
+    <h1>Old todos</h1>
     <Todos />
   </q-page>
 </template>
 
 <script setup>
-import Todos from "src/components/syncedTodos/Todos.vue";
+import Todos from "src/components/oldTodos/Todos.vue";
 
 </script>
