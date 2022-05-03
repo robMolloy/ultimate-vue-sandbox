@@ -1,7 +1,5 @@
 <template>
-  <q-page padding>
     <QuasarCounter />
-  </q-page>
 </template>
 
 <script setup>

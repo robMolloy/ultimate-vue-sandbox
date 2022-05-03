@@ -1,7 +1,5 @@
 <template>
-  <q-page padding>
-    <Parent />
-  </q-page>
+  <Parent />
 </template>
 
 <script setup>
