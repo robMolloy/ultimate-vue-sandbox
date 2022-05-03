@@ -2,8 +2,8 @@
   <div>
     Child:
     <input :value="text" @input="(e) => $emit('update:text', e.target.value)" />
+    {{ text }}
   </div>
-  {{ text }}
 </template>
 
 <script setup>

@@ -5,33 +5,27 @@
       <h2>I tell you what to do</h2>
 
       <div class="child">
-        <p>
-          <b>&lt;Child v-model:text="text" /&gt;</b>
-        </p>
-        <div class="q-pa-md">
-          <span style="max-width: 35%">
-            <span>Parent: {{ text }}</span>
-            <input v-model="text" />
-          </span>
-          <span style="max-width: 35%">
-            <Child v-model:text="text" />
-          </span>
+        <p class="flex flex-center"><b>&lt;Child v-model:text="text" /&gt;</b></p>
+        <div class="row">
+          Parent:
+          <input v-model="text" />
+          {{ text }}
         </div>
+        <Child v-model:text="text" />
       </div>
 
       <div class="child">
-        <p>
-          <b>&lt;Child2 v-model="anyVar" /&gt;</b>
-        </p>
-        <div>
-          Parent: <input v-model="anyVar" />
+        <p class="flex flex-center"><b>&lt;Child2 v-model="anyVar" /&gt;</b></p>
+        <div class="row">
+          Parent:
+          <input v-model="anyVar" />
           {{ anyVar }}
         </div>
         <Child2 v-model="anyVar" />
       </div>
 
       <div class="child">
-        <p><b>&lt;Child3 v-model="anotherVar" /&gt;</b></p>
+        <p class="flex flex-center"><b>&lt;Child3 v-model="anotherVar" /&gt;</b></p>
         <div class="row">
           Parent:
           <q-input v-model="anotherVar" />
@@ -42,10 +36,10 @@
       </div>
 
       <div class="child">
-        <p><b>&lt;Child4 v-model:text="moreVar" /&gt;</b></p>
-        <div class="row no-wrap">
+        <p class="flex flex-center"><b>&lt;Child4 v-model:text="moreVar" /&gt;</b></p>
+        <div class="row">
           Parent:
-          <q-input v-model="moreVar"/>
+          <q-input v-model="moreVar" />
           {{ moreVar }}
         </div>
         <Child4 v-model:text="moreVar" />
