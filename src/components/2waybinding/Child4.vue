@@ -1,10 +1,9 @@
 <template>
-  <div>ParentText: {{ text }}</div>
-  <q-input
-    :model-value="text"
-    @update:modelValue="changeValue"
-    @keydown="onKeyDown"
-  />
+  <div class="row">
+    Child:
+    <q-input :model-value="text" @update:modelValue="changeValue" @keydown="onKeyDown" />
+    {{ text }}
+  </div>
 </template>
 
 <script setup>

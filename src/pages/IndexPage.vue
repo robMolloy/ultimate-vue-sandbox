@@ -1,17 +1,20 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page padding>
+    <div>
+      <q-btn
+        class="full-width"
+        v-for="{path} of routes"
+        :to="`/${path}`"
+        :key="path"
+      >
+        {{ path || 'home' }}
+      </q-btn>
+    </div>
   </q-page>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script setup>
+import router from "src/router/routes";
 
-export default defineComponent({
-  name: "IndexPage",
-});
+const routes = router[0].children;
 </script>

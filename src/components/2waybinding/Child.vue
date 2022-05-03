@@ -1,6 +1,9 @@
 <template>
-  <div>ParentText: {{text}}</div>
-  <input :value="text" @input="(e)=>$emit('update:text', e.target.value)"/>
+  <div>
+    Child:
+    <input :value="text" @input="(e) => $emit('update:text', e.target.value)" />
+  </div>
+  {{ text }}
 </template>
 
 <script setup>
@@ -12,5 +15,4 @@ defineProps({
 });
 
 defineEmits(["update:text"]);
-
 </script>

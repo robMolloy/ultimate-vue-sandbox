@@ -1,9 +1,12 @@
 <template>
-  <div>ParentText: {{ modelValue }}</div>
-  <q-input
-    :model-value="modelValue"
-    @update:modelValue="(e) => $emit('update:modelValue', e)"
-  />
+  <div class="row">
+    Child:
+    <q-input
+      :model-value="modelValue"
+      @update:modelValue="(e) => $emit('update:modelValue', e)"
+    />
+    {{ modelValue }}
+  </div>
 </template>
 
 <script setup>
@@ -15,5 +18,4 @@ defineProps({
 });
 
 defineEmits(["update:modelValue"]);
-
 </script>

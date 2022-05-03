@@ -9,6 +9,7 @@ const routes = [
       { path: "2wb", component: () => import("src/pages/PageTwoWayBinding.vue") },
       { path: "quasar-store", component: () => import("src/pages/PageDefaultQuasarStores.vue") },
       { path: "use-refs", component: () => import("pages/PageUseRefs.vue") },
+      { path: "use-js-imports", component: () => import("pages/PageUseJsImports.vue") },
       { path: "wrapper", component: () => import("src/pages/PageWrapper.vue") },
     ],
   },

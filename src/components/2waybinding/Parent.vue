@@ -3,50 +3,52 @@
     <span style="max-width: 35vw">
       <h1>Parent</h1>
       <h2>I tell you what to do</h2>
-      <div class="row">
-        <span class="col">
-          <div>ParentText: {{ text }}</div>
-          <input v-model="text" />
-        </span>
-        <span class="col">
-          <Child v-model:text="text" />
-          &lt;Child v-model:text="text" />
-        </span>
+
+      <div class="child">
+        <p>
+          <b>&lt;Child v-model:text="text" /&gt;</b>
+        </p>
+        <div class="q-pa-md">
+          <span style="max-width: 35%">
+            <span>Parent: {{ text }}</span>
+            <input v-model="text" />
+          </span>
+          <span style="max-width: 35%">
+            <Child v-model:text="text" />
+          </span>
+        </div>
       </div>
 
-      <br />
-      <div class="row">
-        <span class="col">
-          <div>ParentText: {{ anyVar }}</div>
-          <input v-model="anyVar" />
-        </span>
-        <span class="col">
-          <Child2 v-model="anyVar" />
-          &lt;Child2 v-model="anyVar" />
-        </span>
+      <div class="child">
+        <p>
+          <b>&lt;Child2 v-model="anyVar" /&gt;</b>
+        </p>
+        <div>
+          Parent: <input v-model="anyVar" />
+          {{ anyVar }}
+        </div>
+        <Child2 v-model="anyVar" />
       </div>
-      <br />
 
-      <div class="row">
-        <span class="col">
-          <div>ParentText: {{ anotherVar }}</div>
+      <div class="child">
+        <p><b>&lt;Child3 v-model="anotherVar" /&gt;</b></p>
+        <div class="row">
+          Parent:
           <q-input v-model="anotherVar" />
-        </span>
-        <span class="col">
-          <Child3 v-model="anotherVar" />
-          &lt;Child3 v-model="anotherVar" />
-        </span>
+          {{ anotherVar || " " }}
+        </div>
+        <br />
+        <Child3 v-model="anotherVar" />
       </div>
-      <br />
-      <div class="row">
-        <span class="col">
-          <div>ParentText: {{ moreVar }}</div>
-          <q-input v-model="moreVar" />
-        </span>
-        <span class="col">
-          <Child4 v-model:text="moreVar" />
-          &lt;Child4 v-model:text="moreVar" />
-        </span>
+
+      <div class="child">
+        <p><b>&lt;Child4 v-model:text="moreVar" /&gt;</b></p>
+        <div class="row no-wrap">
+          Parent:
+          <q-input v-model="moreVar"/>
+          {{ moreVar }}
+        </div>
+        <Child4 v-model:text="moreVar" />
       </div>
     </span>
   </div>
@@ -64,3 +66,11 @@ const anyVar = ref("");
 const anotherVar = ref("");
 const moreVar = ref("");
 </script>
+
+<style scoped>
+div.child {
+  border: 1px solid gray;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+</style>
