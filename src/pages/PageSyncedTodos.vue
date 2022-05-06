@@ -6,6 +6,6 @@
 </template>
 
 <script setup>
-import Todos from "src/components/syncedTodos2/Todos.vue";
+import Todos from "src/components/syncedTodos/Todos.vue";
 
 </script>

@@ -5,7 +5,7 @@ const routes = [
     children: [
       { path: "", component: () => import("pages/IndexPage.vue") },
       { path: "old-todos", component: () => import("src/pages/PageOldTodos.vue") },
-      { path: "synced-todos2", component: () => import("src/pages/PageSyncedTodos2.vue") },
+      { path: "synced-todos", component: () => import("src/pages/PageSyncedTodos.vue") },
       { path: "counter", component: () => import("src/pages/PageCounter.vue") },
       { path: "2wb", component: () => import("src/pages/PageTwoWayBinding.vue") },
       { path: "quasar-store", component: () => import("src/pages/PageDefaultQuasarStores.vue") },
