@@ -6,9 +6,9 @@
     @keyup="onInput"
     v-model="inputValue"
     :rules="[
-      stringDoesNotContainX('a'),
-      stringMustContainX('b'),
-      stringMustContainXandY('x', 'y'),
+      allRules.stringDoesNotContainX('a'),
+      allRules.stringMustContainX('b'),
+      allRules.stringMustContainXandY('x', 'y'),
     ]"
   >
     <template v-slot:append>
@@ -20,18 +20,7 @@
 <script setup>
 import { ref } from "vue";
 import { useSyncedTodosStore } from "src/stores/useSyncedTodosStore";
-// import { useRules } from "src/rules";
-import { ruleDefinitions } from "src/rules/ruleDefinitions";
-
-const createRuleFromRuleDefinitionName = (ruleName) => (...props) => {
-  const ruleDefinition = ruleDefinitions[ruleName];
-  const { test, msg } = ruleDefinition(...props);
-
-  return (val) => test(val) || msg;
-};
-const stringDoesNotContainX = createRuleFromRuleDefinitionName("stringDoesNotContainX");
-const stringMustContainX = createRuleFromRuleDefinitionName("stringMustContainX");
-const stringMustContainXandY = createRuleFromRuleDefinitionName("stringMustContainXandY");
+import { allRules } from "src/rules/allRules";
 
 const emit = defineEmits(["create"]);
 

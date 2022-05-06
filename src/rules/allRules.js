@@ -1,11 +1,14 @@
 import { ruleDefinitions } from "./ruleDefinitions";
 
-export default {
-  isNotBlankString: () => {
+const createRuleFromRuleDefinitionName = (ruleName) => (...props) => {
+  const ruleDefinition = ruleDefinitions[ruleName];
+  const { test, msg } = ruleDefinition(...props);
 
-  },
-  stringDoesNotContainSomething: (someString) => {},
-  stringMustContainSomething: (someString) => {},
-  stringContainsA: () => {},
-  stringContainsB: () => {},
+  return (val) => test(val) || msg;
+};
+
+export const allRules = {
+  stringDoesNotContainX: createRuleFromRuleDefinitionName("stringDoesNotContainX"),
+  stringMustContainX: createRuleFromRuleDefinitionName("stringMustContainX"),
+  stringMustContainXandY: createRuleFromRuleDefinitionName("stringMustContainXandY"),
 };
