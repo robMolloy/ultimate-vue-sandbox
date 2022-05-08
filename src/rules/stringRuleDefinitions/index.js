@@ -1,4 +1,4 @@
-export const ruleDefinitions = {
+export default {
   isNotBlankString: () => ({
     test: (val) => val === "",
     msg: "cannot accept blank string",

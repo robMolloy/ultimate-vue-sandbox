@@ -1,1 +1,7 @@
-export { default as allRules } from "./allRules";
+import stringRuleDefinitions from "./stringRuleDefinitions";
+import arrayRuleDefinitions from "./arrayRuleDefinitions";
+
+export default {
+  stringRules: stringRuleDefinitions,
+  arrayRules: arrayRuleDefinitions,
+};

@@ -33,6 +33,7 @@ module.exports = configure((/* ctx */) => ({
     "i18n",
     "firebase",
     "pinia",
+    "ruleBook",
   ],
 
   // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css

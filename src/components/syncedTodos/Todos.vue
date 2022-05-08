@@ -1,11 +1,7 @@
 <template>
-  <q-btn @click="()=>changeInputValue('')">clear</q-btn>
-  <q-btn @click="()=>createTodoFromInput()">create</q-btn>
-  <AddTodoInput
-    label="Todo"
-    @create="onCreateTodo"
-    ref="addTodoInput"
-  />
+  <q-btn @click="() => addTodoInput.clearValue()">clear</q-btn>
+  <q-btn @click="() => createTodoFromInput()">create</q-btn>
+  <AddTodoInput label="Todo" @create="onCreateTodo" ref="addTodoInput" />
   <DisplayTodos />
 </template>
 
@@ -16,10 +12,8 @@ import AddTodoInput from "./AddTodoInput.vue";
 
 const addTodoInput = ref();
 const onCreateTodo = (newTodo) => {
+  // eslint-disable-next-line
   console.log(JSON.stringify(newTodo));
 };
-
-const changeInputValue = (val) => (addTodoInput.value.changeValue(val));
-const createTodoFromInput = (val) => (addTodoInput.value.createTodo(val));
-
+const createTodoFromInput = (val) => addTodoInput.value.createTodo(val);
 </script>

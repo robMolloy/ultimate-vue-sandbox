@@ -5,13 +5,12 @@
     v-bind="$attrs"
     @keyup="onInput"
     v-model="inputValue"
-    :rules="[
-      allRules.stringDoesNotContainX('a'),
-      allRules.stringMustContainX('b'),
-      allRules.stringMustContainXandY('x', 'y'),
-    ]"
+    :rules="[stringMustContainXandY('x', 'y')]"
   >
     <template v-slot:append>
+      <q-btn round dense flat icon="close" @click="clearValue" />
+    </template>
+    <template v-slot:after>
       <q-btn round dense flat icon="send" @click="createTodo" />
     </template>
   </q-input>
@@ -20,26 +19,29 @@
 <script setup>
 import { ref } from "vue";
 import { useSyncedTodosStore } from "src/stores/useSyncedTodosStore";
-import { allRules } from "src/rules/allRules";
+// import { rules } from "src/boot/ruleBook";
+import { useRules } from "src/boot/ruleBook";
+
+const { stringMustContainXandY } = useRules("stringMustContainXandY");
 
 const emit = defineEmits(["create"]);
 
 const inputValue = ref("");
-const changeValue = (value) => {
-  inputValue.value = value;
-};
+
+const changeValue = (value) => { inputValue.value = value; };
+const clearValue = () => changeValue("");
 
 const todosStore = useSyncedTodosStore();
 const createTodo = () => {
   const newTodo = { task: inputValue.value, isComplete: false };
   emit("create", newTodo);
   todosStore.create(newTodo);
-  changeValue("");
+  clearValue();
 };
 
 const onInput = (e) => {
   if (e.keyCode === 13) createTodo();
 };
 
-defineExpose({ changeValue, createTodo });
+defineExpose({ changeValue, createTodo, clearValue });
 </script>
