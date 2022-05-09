@@ -5,7 +5,9 @@
     v-bind="$attrs"
     @keyup="onInput"
     v-model="inputValue"
-    :rules="[stringMustContainXandY('x', 'y')]"
+    :rules="[
+      wait1SecondAndError(),
+    ]"
   >
     <template v-slot:append>
       <q-btn round dense flat icon="close" @click="clearValue" />
@@ -19,16 +21,17 @@
 <script setup>
 import { ref } from "vue";
 import { useSyncedTodosStore } from "src/stores/useSyncedTodosStore";
-// import { rules } from "src/boot/ruleBook";
-import { useRules } from "src/boot/ruleBook";
+import { useStringRules } from "src/rules";
 
-const { stringMustContainXandY } = useRules("stringMustContainXandY");
+const { wait1SecondAndError } = useStringRules();
 
 const emit = defineEmits(["create"]);
 
 const inputValue = ref("");
 
-const changeValue = (value) => { inputValue.value = value; };
+const changeValue = (value) => {
+  inputValue.value = value;
+};
 const clearValue = () => changeValue("");
 
 const todosStore = useSyncedTodosStore();

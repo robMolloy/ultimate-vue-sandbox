@@ -1,6 +1,14 @@
 export default {
+  wait1SecondAndError: () => ({
+    test: () => new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(false);
+      }, 1000);
+    }),
+    msg: "waited 1 second",
+  }),
   isNotBlankString: () => ({
-    test: (val) => val === "",
+    test: (val) => val !== "",
     msg: "cannot accept blank string",
   }),
   stringDoesNotContainX: (someString) => ({

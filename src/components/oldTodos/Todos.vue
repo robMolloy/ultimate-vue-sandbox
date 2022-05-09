@@ -15,7 +15,6 @@
 export default {
   methods: {
     focus2() {
-      console.log(Object.assign({}, this));
       this.$refs.theInput.focusInput();
     },
   },

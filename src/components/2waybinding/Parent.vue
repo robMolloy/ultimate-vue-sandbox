@@ -76,7 +76,6 @@ const parent5Element = ref();
 const child5Element = ref();
 
 watch(child5Var, (newValue) => {
-  console.log(123);
   child5Element.value.changeValue(newValue);
 });
 // const con = console;

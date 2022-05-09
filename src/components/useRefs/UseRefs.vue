@@ -29,9 +29,11 @@ const span = ref();
 const input = ref();
 const qbtn = ref();
 
+/* eslint-disable no-console */
 const logtitle = () => console.log(title);
 const logdiv = () => console.log(div);
 const logspan = () => console.log(span);
 const loginput = () => console.log(input);
 const logthisqbtn = () => console.log(qbtn);
+/* eslint-enable no-console */
 </script>
