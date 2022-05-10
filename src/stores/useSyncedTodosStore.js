@@ -39,9 +39,7 @@ export const useSyncedTodosStore = defineStore("syncedTodosStore", {
     update(item) {
       const key = this.local.findIndex(({ id }) => item.id === id);
       const isValid = key > -1;
-      if (isValid) {
-        this.local[key] = item;
-      }
+      if (isValid) { this.local[key] = item; }
 
       return isValid ? item : undefined;
     },

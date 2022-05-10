@@ -72,6 +72,9 @@ module.exports = {
     'linebreak-style': 'off',
     'no-underscore-dangle': 'off',
     'prefer-object-spread': 'off',
+    "no-restricted-imports": ["warn", {
+      "patterns": [".*"]
+    }],
     
     'prefer-promise-reject-errors': 'off',
 
